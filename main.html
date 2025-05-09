@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            position: relative;
+            flex-direction: column; /* Arrange items vertically */
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://files.catbox.moe/7sfsbc.jpg'); /* Replace with your devil image URL */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+            background-color: black;
+        }
+
+        .button-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h3 {
+            margin-top: -40px;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+
+        .button {
+            width: 140px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0px 15px;
+            background-color: red;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            font-weight: 900;
+            transition-duration: .2s;
+            background: linear-gradient(0deg, #000, #272727);
+            text-decoration: none;
+            margin-bottom: 10px; /* Add some space below the regular buttons */
+        }
+
+        .button:before, .button:after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #0abde3, #4834d4, #000000,#000000, #eb4d4b);
+            background-size: 400%;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            z-index: -1;
+            animation: steam 10s linear infinite;
+        }
+
+        .button:after {
+            filter: blur(50px);
+        }
+
+        .button span {
+            z-index: 1;
+        }
+
+        .play-button { /* Style for the play button */
+            background: linear-gradient(0deg, #0a3d62, #1e3a8a); /* Different background */
+            order: 100; /* Push the play button to the bottom */
+            margin-top: 20px; /* Add some space above the play button */
+        }
+
+        .play-button:before, .play-button:after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #0abde3, #4834d4, #000000,#000000, #eb4d4b); /* Different animation colors */
+            background-size: 400%;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            z-index: -1;
+            animation: steam-play 10s linear infinite; /* Different animation name */
+        }
+
+        @keyframes steam {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        @keyframes steam-play { /* Different animation for play button */
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .play-button:after {
+            filter: blur(50px);
+        }
+
+        .play-button span {
+            z-index: 1;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #222; /* Darker gray footer background */
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .button span {
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="music" loop>
+        <source src="https://files.catbox.moe/i8r2y5.MP3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="button-container">
+        <h3>YOUNGBOWY-XMD</h3>
+        <a href="/pair" class="button" target="_blank">
+            <span>PAIRING-CODE</span>
+        </a>
+        <br>
+        <a href="/qr" class="button" target="_blank">
+            <span>QR-CODE</span>
+        </a>
+        <br>
+        <a href="https://dashboard.heroku.com/new?template=https://github.com/YoungboyTechZw/YoungboyTechZw-MDX/tree/main" class="button" target="_blank">
+            <span>HEROKU-DEPLOY</span>
+        </a>
+        <br>
+       <a
+       href="https://github.com//YoungboyTechZw" class="button"target="blank"
+       <span>MORE METHODS</span>
+       </a>
+       <br>
+        <a href="https://whatsapp.com/channel/0029VbBM2eZ1HsprGytbnH1R" class="button" target="_blank">
+            <span>WhatsApp</span>
+        </a>
+        <br>
+        <p>HAVE ANY ERROR CLICK ERROR BUTTON</p>
+        <a href="https://wa.me/263714529036" class="button" target="_blank">
+            <span>ERROR</span>
+        </a>
+        <br>
+        <div>
+            <button id="playButton" class="button play-button">
+                <span>TAP TO PLAY</span>
+            </button>
+        </div>
+        <footer>YOUNGBWOY-TECG <span id="currentYear"></span></footer>
+    </div>
+
+    <script>
+        const music = document.getElementById("music");
+        const playButton = document.getElementById("playButton");
+        const currentYearSpan = document.getElementById("currentYear");
+
+        if (playButton && music) {
+            playButton.addEventListener('click', () => {
+                music.play();
+            });
+        }
+
+        if (currentYearSpan) {
+            currentYearSpan.innerHTML = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>
