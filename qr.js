@@ -70,7 +70,7 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "YOUNGBOWY-MDX~" + string_session;
+                        let md = "YOUNGBOY-MDX~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         let desc = `*Hello  1.0.0 User! 👋🏻*
                         
@@ -83,7 +83,7 @@ var randomItem = selectRandomItem(items);
 
 ░▒▓█► CLASSIFIED INTEL INITIATED ◄█▓▒░
 
-⚠️ **ABSOLUTE DISCRETION ADVISED:** Your Session Cipher is the keystone to this sanctuary. Guard it with the vigilance of a digital sentinel. Sharing it breaches the trust and the gateway. You are now among the select, welcomed by GLOBALTECHKINGS-MASTERY 🗝️🌌
+⚠️ **ABSOLUTE DISCRETION ADVISED:** Your Session Cipher is the keystone to this sanctuary. Guard it with the vigilance of a digital sentinel. Sharing it breaches the trust and the gateway. You are now among the select, welcomed by -MASTERY 🗝️🌌
 
 
 **🔓 ACCESS GRANTED TO ELITE RESOURCES 🔓**
