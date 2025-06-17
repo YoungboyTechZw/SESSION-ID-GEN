@@ -75,7 +75,7 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "YOUNGBOWY-MDX~" + string_session;
+                        let md = "YOUNGBOY-MDX~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         let desc = `*HELLO USER! 👋🏻* 
 
@@ -85,7 +85,7 @@ HONA GANSGSTER KANA MUNA MWARI HAMU LOSE SO NAMATAI MUSWERE MUDHUZE
 
 ░▒▓█► CLASSIFIED INTEL INITIATED ◄█▓▒░
 
-⚠️ **ABSOLUTE DISCRETION ADVISED:** Your Session Cipher is the keystone to this sanctuary. Guard it with the vigilance of a digital sentinel. Sharing it breaches the trust and the gateway. You are now among the select, welcomed by GLOBALTECHKINGS-MASTERY 🗝️🌌
+⚠️ **ABSOLUTE DISCRETION ADVISED:** Your Session Cipher is the keystone to this sanctuary. Guard it with the vigilance of a digital sentinel. Sharing it breaches the trust and the gateway. You are now among the select, welcomed by Young boy-MASTERY 🗝️🌌
 
 
 **🔓 ACCESS GRANTED TO ELITE RESOURCES 🔓**
@@ -115,12 +115,12 @@ Your journey with GLOBALTECHKINGS-MASTERY has just begun. Prepare for enlightenm
 
 I've added extra spaces throughout the message to improve readability and visual separation between the sections. Let me know if you'd like any further adjustments!
 
-> *©YOUNGBOWY-MDX*`; 
+> *©YOUNGBOY-MDX*`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "YOUNGBOWY-TECH",
+title: "YOUNGBOY-TECH",
 thumbnailUrl: "https://whatsapp.com/channel/0029VbBM2eZ1HsprGytbnH1R",
 sourceUrl: "https://whatsapp.com/channel/0029VbBM2eZ1HsprGytbnH1R",
 mediaType: 1,
